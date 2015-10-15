@@ -77,16 +77,25 @@ text(other@data$Feature.Easting,other@data$Feature.Northing,other@data$Name,cex=
 
 #Save the three versions: all, then just turbines, then other
 write.csv(as.data.frame(turbinePoints),"secureFolder/scotland_AllEnergyProductionPOIs.csv")
-write.csv(as.data.frame(turbines),"secureFolder/scotland_Turbines.csv")
+
+#Quick hack: turbines contains four PointX farms - don't need those.
+acc <- as.data.frame(turbines)
+acc <- acc[acc$Provenance!="PointX",]
+write.csv(acc,"secureFolder/scotland_Turbines.csv")
+
+#write.csv(as.data.frame(turbines),"secureFolder/scotland_Turbines.csv")
 write.csv(as.data.frame(other), "secureFolder/scotland_NotTurbinesEneryProductionPOIs.csv")
 
 #Oh look - "other" might have more in...
 #checkOther <- as.data.frame(other)
 #checkOtherWind <- checkOther[grep("wind",checkOther$Name,ignore.case = T),]
 
-
-
-
+#check accuracy
+acc <- as.data.frame(turbines)
+summary(acc$Positional.Accuracy.Code)
+acc[acc$Positional.Accuracy.Code==2,]
+summary(acc$Provenance)
+acc[acc$Provenance=="PointX",]
 
 
 
