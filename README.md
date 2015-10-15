@@ -28,8 +28,8 @@ The `wind turbine' file contains a subset of all 'energy production' category PO
 
 The first - by far the largest number in the data - are all supplied by the British Wind Energy Association (from the `Provenance' field). The latter two come from Ordnance Survey.
 
+[turbineSummary.csv](https://github.com/DanOlner/pointsOfInterestProcessing/blob/master/turbineSummary.csv) groups the turbine-only file by name, showing the windfarms in order of size.
 
-
-
+[checkEnergyProductionOther.png](https://github.com/DanOlner/pointsOfInterestProcessing/blob/master/checkEnergyProductionOther.png) is a very large-output map just for checking the names/locations of 'other' energy production category POIs, for checking visually whether they're relevant. (Those names can also be checked in the CSV output from the code itself but that'll be in the secureFolder).
 
 
